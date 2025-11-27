@@ -1,6 +1,6 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
-import { ExternalLink, Github, Monitor, Terminal } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const Projects: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {PROJECTS.map((project, idx) => (
+          {PROJECTS.map((project) => (
             <div 
               key={project.id}
               className="group relative"

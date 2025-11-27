@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Terminal, Bot, User, AlertCircle } from 'lucide-react';
-import { ChatMessage, ChatRole } from '../../types';
-import { sendMessageToGemini } from '../services/geminiService';
+import { ChatRole, type ChatMessage } from '../../types';
+import { sendMessageToGemini } from '../../services/geminiService';
 
 const Contact: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'form' | 'chat'>('form');
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
                        <Send size={18} />
                      </button>
                    </div>
-                   {!process.env.API_KEY && (
+                   {!import.meta.env.VITE_API_KEY && (
                       <div className="absolute -bottom-6 right-0 flex items-center gap-1 text-[10px] text-yellow-500 font-mono opacity-70">
                         <AlertCircle size={10} />
                         <span>API KEY MISSING - DEMO MODE</span>

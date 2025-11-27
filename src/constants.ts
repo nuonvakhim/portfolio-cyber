@@ -1,4 +1,6 @@
-import type {Project, Skill, NavItem} from '../types';
+
+import type { Project, Skill, NavItem } from '../types'
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'SYST.INIT', href: '#home' },
   { label: 'DATA.ABOUT', href: '#about' },

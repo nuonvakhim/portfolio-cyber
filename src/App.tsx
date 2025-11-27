@@ -24,7 +24,7 @@ function App() {
             </main>
 
             <footer className="relative z-10 py-6 text-center text-xs font-mono text-gray-600 border-t border-gray-900 bg-black/80">
-                <p>© 2025 NEON_FLOW SYSTEMS. ALL RIGHTS RESERVED.</p>
+                <p>© 2025 NUON_VAKHIM SYSTEMS. ALL RIGHTS RESERVED.</p>
                 <p className="mt-1">POWERED BY REACT & GEMINI API</p>
             </footer>
         </div>

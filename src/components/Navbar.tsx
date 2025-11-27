@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_ITEMS } from
+import { NAV_ITEMS } from '../constants';
 import { Terminal, Cpu } from 'lucide-react';
 
 const Navbar: React.FC = () => {

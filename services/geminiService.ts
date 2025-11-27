@@ -1,9 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
-import { ChatMessage, ChatRole } from "../types";
+import type { ChatMessage } from "../types";
 
 // Note: In a production app, never expose API keys on the client side like this unless restricted by HTTP referer.
-// This is for demonstration purposes as per instructions to use process.env.API_KEY.
-const apiKey = process.env.API_KEY;
+// This is for demonstration purposes. In Vite, use import.meta.env.VITE_API_KEY.
+const apiKey = import.meta.env.VITE_API_KEY;
 
 let aiClient: GoogleGenAI | null = null;
 

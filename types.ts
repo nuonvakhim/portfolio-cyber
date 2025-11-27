@@ -19,10 +19,12 @@ export interface NavItem {
   href: string;
 }
 
-export enum ChatRole {
-  USER = 'user',
-  MODEL = 'model'
-}
+export const ChatRole = {
+  USER: 'user',
+  MODEL: 'model'
+} as const;
+
+export type ChatRole = typeof ChatRole[keyof typeof ChatRole];
 
 export interface ChatMessage {
   role: ChatRole;

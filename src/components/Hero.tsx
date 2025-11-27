@@ -19,8 +19,11 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
-            <span className="block glitch-hover cursor-default">NUON</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-glow-cyan glitch-hover cursor-default">
+            {/* Solid Text - Uses standard glitch-hover */}
+            <span className="block glitch-hover cursor-default text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">NUON</span>
+            
+            {/* Gradient Text - Uses drop-shadow for glow and glitch-anim for movement (preserves gradient) */}
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_10px_rgba(0,243,255,0.6)] glitch-anim cursor-default pb-2">
               VAKHIM
             </span>
           </h1>
