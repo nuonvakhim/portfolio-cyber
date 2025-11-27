@@ -47,7 +47,7 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {SKILLS.map((skill, index) => {
+          {SKILLS.map((skill) => {
             const radius = 36;
             const circumference = 2 * Math.PI * radius;
             const strokeDashoffset = circumference - (skill.level / 100) * circumference;
