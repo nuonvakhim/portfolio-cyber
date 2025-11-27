@@ -1,5 +1,6 @@
 import React from 'react';
 import { SKILLS } from '../constants';
+import { Blocks, Cpu, Globe } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const getCategoryColor = (category: string) => {
@@ -18,6 +19,13 @@ const Skills: React.FC = () => {
       case 'Core': return '#eab308';
       default: return '#06b6d4';
     }
+  };
+
+  // Helper to get fallback icon if no URL is provided
+  const getFallbackIcon = (name: string, className: string) => {
+    if (name.includes('Hyperledger')) return <Blocks className={className} />;
+    if (name.includes('API')) return <Globe className={className} />;
+    return <Cpu className={className} />;
   };
 
   return (
@@ -39,7 +47,7 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {SKILLS.map((skill) => {
+          {SKILLS.map((skill, index) => {
             const radius = 36;
             const circumference = 2 * Math.PI * radius;
             const strokeDashoffset = circumference - (skill.level / 100) * circumference;
@@ -75,11 +83,18 @@ const Skills: React.FC = () => {
                     />
                   </svg>
                   
-                  {/* Center Text */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className={`text-xl font-bold font-mono ${colorClass} group-hover:scale-110 transition-transform`}>
-                      {skill.level}%
-                    </span>
+                  {/* Center Content: Logo or Icon */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    {skill.logo ? (
+                      <img 
+                        src={skill.logo} 
+                        alt={skill.name} 
+                        className={`w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] ${skill.name === 'Next.js' ? 'invert' : ''}`}
+                      />
+                    ) : (
+                      // Fallback Icon
+                      getFallbackIcon(skill.name, `w-10 h-10 ${colorClass} group-hover:scale-110 transition-transform`)
+                    )}
                   </div>
 
                   {/* Radar Scan Effect Overlay */}
@@ -94,8 +109,8 @@ const Skills: React.FC = () => {
                     {skill.name}
                   </h3>
                   <div className="flex items-center justify-center gap-2 mt-1">
-                     <span className={`w-1.5 h-1.5 rounded-full ${colorClass === 'text-pink-500' ? 'bg-pink-500' : colorClass === 'text-purple-500' ? 'bg-purple-500' : colorClass === 'text-yellow-500' ? 'bg-yellow-500' : 'bg-cyan-500'}`}></span>
-                     <span className="text-xs text-gray-500 font-mono uppercase tracking-widest">{skill.category}</span>
+                     {/* <span className={`w-1.5 h-1.5 rounded-full ${colorClass === 'text-pink-500' ? 'bg-pink-500' : colorClass === 'text-purple-500' ? 'bg-purple-500' : colorClass === 'text-yellow-500' ? 'bg-yellow-500' : 'bg-cyan-500'}`}></span> */}
+                     {/* <span className="text-xs text-gray-500 font-mono uppercase tracking-widest">{skill.level}% Proficiency</span> */}
                   </div>
                 </div>
                 

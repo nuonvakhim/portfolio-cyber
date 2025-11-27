@@ -1,5 +1,5 @@
 
-import type { Project, Skill, NavItem } from '../types'
+import type { Project, Skill, NavItem, SocialLink } from '../types'
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'SYST.INIT', href: '#home' },
@@ -9,15 +9,84 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'COM.LINK', href: '#contact' },
 ];
 
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    platform: 'GITHUB',
+    username: '@nuonvakhim',
+    url: 'https://github.com/nuonvakhim', // Update with your actual URL
+    icon: 'github'
+  },
+  {
+    platform: 'LINKEDIN',
+    username: 'Nuon Vakhim',
+    url: 'https://linkedin.com/in/nuonvakhim', // Update with your actual URL
+    icon: 'linkedin'
+  },
+  {
+    platform: 'EMAIL',
+    username: 'contact@nuonvakhim.dev', // Update with your actual Email
+    url: 'mailto:contact@nuonvakhim.dev', 
+    icon: 'mail'
+  },
+  {
+    platform: 'TELEGRAM',
+    username: '@nuonvakhim',
+    url: 'https://t.me/nuonvakhim', // Update with your actual URL
+    icon: 'telegram'
+  }
+];
+
 export const SKILLS: Skill[] = [
-  { name: 'Spring Boot', category: 'Backend', level: 95 },
-  { name: 'Next.js', category: 'Frontend', level: 92 },
-  { name: 'Spring Data JPA', category: 'Backend', level: 85 },
-  { name: 'Golang', category: 'Core', level: 80 },
-  { name: 'Hyperledger Fabric', category: 'Core', level: 75 },
-  { name: 'RESTful APIs', category: 'Backend', level: 95 },
-  { name: 'jQuery', category: 'Frontend', level: 85 },
-  { name: 'Docker', category: 'Tools', level: 75 },
+  { 
+    name: 'Spring Boot', 
+    category: 'Backend', 
+    level: 95, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' 
+  },
+  { 
+    name: 'Next.js', 
+    category: 'Frontend', 
+    level: 92, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' 
+  },
+  { 
+    name: 'Spring Data JPA', 
+    category: 'Backend', 
+    level: 85, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg' 
+  },
+  { 
+    name: 'Golang', 
+    category: 'Core', 
+    level: 80, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg' 
+  },
+  { 
+    name: 'Hyperledger Fabric', 
+    category: 'Core', 
+    level: 75,
+    logo: ''
+    // No stable CDN logo, will use fallback icon
+  },
+  { 
+    name: 'RESTful APIs', 
+    category: 'Backend', 
+    level: 95,
+    logo: ''
+    // Will use fallback icon
+  },
+  { 
+    name: 'jQuery', 
+    category: 'Frontend', 
+    level: 85, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg' 
+  },
+  { 
+    name: 'Docker', 
+    category: 'Tools', 
+    level: 75, 
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' 
+  },
 ];
 
 export const PROJECTS: Project[] = [

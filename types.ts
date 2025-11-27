@@ -12,6 +12,7 @@ export interface Skill {
   name: string;
   category: 'Frontend' | 'Backend' | 'Tools' | 'Core';
   level: number; // 0-100
+  logo: string;
 }
 
 export interface NavItem {
@@ -29,4 +30,10 @@ export type ChatRole = typeof ChatRole[keyof typeof ChatRole];
 export interface ChatMessage {
   role: ChatRole;
   text: string;
+}
+export interface SocialLink {
+  platform: string;
+  username: string;
+  url: string;
+  icon: string; // Icon name reference
 }
